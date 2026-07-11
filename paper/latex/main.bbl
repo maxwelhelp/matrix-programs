@@ -1,0 +1,122 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahmad et~al.(2025)Ahmad, Joshi, and Modi]{ahmad2025beyond}
+Areeb Ahmad, Abhinav Joshi, and Ashutosh Modi.
+\newblock Beyond components: Singular vector-based interpretability of
+  transformer circuits.
+\newblock \emph{arXiv preprint arXiv:2511.20273}, 2025.
+
+\bibitem[Bricken et~al.(2023)Bricken, Templeton, Batson, Chen, Jermyn, Conerly,
+  Turner, Anil, Denison, Askell, Lasenby, Wu, Kravec, Schiefer, Maxwell,
+  Joseph, Hatfield-Dodds, Tamkin, Nguyen, McLean, Burke, Hume, Carter,
+  Henighan, and Olah]{bricken2023monosemanticity}
+Trenton Bricken, Adly Templeton, Joshua Batson, Brian Chen, Adam Jermyn, Tom
+  Conerly, Nick Turner, Cem Anil, Carson Denison, Amanda Askell, Robert
+  Lasenby, Yifan Wu, Shauna Kravec, Nicholas Schiefer, Tim Maxwell, Nicholas
+  Joseph, Zac Hatfield-Dodds, Alex Tamkin, Karina Nguyen, Brayden McLean,
+  Josiah~E. Burke, Tristan Hume, Shan Carter, Tom Henighan, and Christopher
+  Olah.
+\newblock Towards monosemanticity: Decomposing language models with dictionary
+  learning.
+\newblock Transformer Circuits Thread, 2023.
+\newblock URL
+  \url{https://transformer-circuits.pub/2023/monosemantic-features/index.html}.
+
+\bibitem[Chan et~al.(2022)Chan, Garriga-Alonso, Goldowsky-Dill, Greenblatt,
+  Nitishinskaya, Radhakrishnan, Shlegeris, and Thomas]{chan2022causal}
+Lawrence Chan, Adri\`a Garriga-Alonso, Nicholas Goldowsky-Dill, Ryan
+  Greenblatt, Jenny Nitishinskaya, Ansh Radhakrishnan, Buck Shlegeris, and Nate
+  Thomas.
+\newblock Causal scrubbing: A method for rigorously testing interpretability
+  hypotheses.
+\newblock AI Alignment Forum / Redwood Research, 2022.
+\newblock URL
+  \url{https://www.alignmentforum.org/posts/JvZhhzycHu2Yd57RN/causal-scrubbing-a-method-for-rigorously-testing}.
+
+\bibitem[Dunefsky et~al.(2024)Dunefsky, Chlenski, and
+  Nanda]{dunefsky2024transcoders}
+Jacob Dunefsky, Philippe Chlenski, and Neel Nanda.
+\newblock Transcoders find interpretable llm feature circuits.
+\newblock \emph{arXiv preprint arXiv:2406.11944}, 2024.
+
+\bibitem[Elhage et~al.(2021)Elhage, Nanda, Olsson, Henighan, Joseph, Mann,
+  Askell, Bai, Chen, Conerly, DasSarma, Drain, Ganguli, Hatfield-Dodds,
+  Hernandez, Jones, Kernion, Lovitt, Ndousse, Amodei, Brown, Clark, Kaplan,
+  McCandlish, and Olah]{elhage2021framework}
+Nelson Elhage, Neel Nanda, Catherine Olsson, Tom Henighan, Nicholas Joseph, Ben
+  Mann, Amanda Askell, Yuntao Bai, Anna Chen, Tom Conerly, Nova DasSarma, Dawn
+  Drain, Deep Ganguli, Zac Hatfield-Dodds, Danny Hernandez, Andy Jones, Jackson
+  Kernion, Liane Lovitt, Kamal Ndousse, Dario Amodei, Tom Brown, Jack Clark,
+  Jared Kaplan, Sam McCandlish, and Chris Olah.
+\newblock A mathematical framework for transformer circuits.
+\newblock Transformer Circuits Thread, 2021.
+\newblock URL \url{https://transformer-circuits.pub/2021/framework/index.html}.
+
+\bibitem[Geiger et~al.(2023)Geiger, Ibeling, Zur, Chaudhary, Chauhan, Huang,
+  Arora, Wu, Goodman, Potts, and Icard]{geiger2023causal}
+Atticus Geiger, Duligur Ibeling, Amir Zur, Maheep Chaudhary, Sonakshi Chauhan,
+  Jing Huang, Aryaman Arora, Zhengxuan Wu, Noah Goodman, Christopher Potts, and
+  Thomas Icard.
+\newblock Causal abstraction: A theoretical foundation for mechanistic
+  interpretability.
+\newblock \emph{arXiv preprint arXiv:2301.04709}, 2023.
+
+\bibitem[Golden(2025)]{golden2025locally}
+James~R. Golden.
+\newblock Equivalent linear mappings of large language models.
+\newblock \emph{arXiv preprint arXiv:2505.24293}, 2025.
+
+\bibitem[Heimersheim and Nanda(2024)]{heimersheim2024patching}
+Stefan Heimersheim and Neel Nanda.
+\newblock How to use and interpret activation patching.
+\newblock \emph{arXiv preprint arXiv:2404.15255}, 2024.
+
+\bibitem[Huang et~al.(2026)Huang, Bakalova, Bhattamishra, Merrill, and
+  Hahn]{huang2026rasp}
+Xinting Huang, Aleksandra Bakalova, Satwik Bhattamishra, William Merrill, and
+  Michael Hahn.
+\newblock Discovering interpretable algorithms by decompiling transformers to
+  rasp.
+\newblock \emph{arXiv preprint arXiv:2602.08857}, 2026.
+
+\bibitem[Merullo et~al.(2024)Merullo, Eickhoff, and
+  Pavlick]{merullo2024talking}
+Jack Merullo, Carsten Eickhoff, and Ellie Pavlick.
+\newblock Talking heads: Understanding inter-layer communication in transformer
+  language models.
+\newblock \emph{arXiv preprint arXiv:2406.09519}, 2024.
+
+\bibitem[{Qwen Team}(2024)]{qwen2024technical}
+{Qwen Team}.
+\newblock Qwen2.5 technical report.
+\newblock \emph{arXiv preprint arXiv:2412.15115}, 2024.
+
+\bibitem[Shazeer(2020)]{shazeer2020glu}
+Noam Shazeer.
+\newblock Glu variants improve transformer.
+\newblock \emph{arXiv preprint arXiv:2002.05202}, 2020.
+
+\bibitem[Su et~al.(2021)Su, Lu, Pan, Murtadha, Wen, and Liu]{su2021roformer}
+Jianlin Su, Yu~Lu, Shengfeng Pan, Ahmed Murtadha, Bo~Wen, and Yunfeng Liu.
+\newblock Roformer: Enhanced transformer with rotary position embedding.
+\newblock \emph{arXiv preprint arXiv:2104.09864}, 2021.
+
+\bibitem[Yu et~al.(2023)Yu, Buchanan, Pai, Chu, Wu, Tong, Haeffele, and
+  Ma]{yu2023whitebox}
+Yaodong Yu, Sam Buchanan, Druv Pai, Tianzhe Chu, Ziyang Wu, Shengbang Tong,
+  Benjamin~D. Haeffele, and Yi~Ma.
+\newblock White-box transformers via sparse rate reduction.
+\newblock \emph{arXiv preprint arXiv:2306.01129}, 2023.
+
+\bibitem[Zhang and Nanda(2023)]{zhang2023patching}
+Fred Zhang and Neel Nanda.
+\newblock Towards best practices of activation patching in language models:
+  Metrics and methods.
+\newblock \emph{arXiv preprint arXiv:2309.16042}, 2023.
+
+\end{thebibliography}
