@@ -1,0 +1,13 @@
+Model: Qwen/Qwen2.5-0.5B-Instruct
+Model revision: not recorded in the original run
+GPU: NVIDIA Tesla P40 24GB
+Precision: fp16
+Attention implementation: eager
+Seed: 0
+Python: not recorded in the original run
+PyTorch: not recorded in the original run
+Transformers: not recorded in the original run
+CUDA runtime: not recorded in the original run
+Full-run wall-clock time: not recorded in the original run
+
+The repository includes scripts/capture_environment.py for recording the current reproduction environment.

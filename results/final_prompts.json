@@ -1,0 +1,258 @@
+[
+  {
+    "suite": "capital",
+    "text": "The capital of France is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Germany is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Japan is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Italy is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Spain is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Canada is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Australia is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Brazil is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Norway is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Poland is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Ukraine is"
+  },
+  {
+    "suite": "capital",
+    "text": "The capital of Portugal is"
+  },
+  {
+    "suite": "factual",
+    "text": "Water freezes at a temperature of"
+  },
+  {
+    "suite": "factual",
+    "text": "Water boils at sea level at"
+  },
+  {
+    "suite": "factual",
+    "text": "The chemical symbol for oxygen is"
+  },
+  {
+    "suite": "factual",
+    "text": "The largest planet in the Solar System is"
+  },
+  {
+    "suite": "factual",
+    "text": "The nearest star to Earth is"
+  },
+  {
+    "suite": "factual",
+    "text": "A year normally contains"
+  },
+  {
+    "suite": "factual",
+    "text": "The opposite of hot is"
+  },
+  {
+    "suite": "factual",
+    "text": "The color produced by mixing blue and yellow is"
+  },
+  {
+    "suite": "factual",
+    "text": "A triangle has three sides, while a square has"
+  },
+  {
+    "suite": "factual",
+    "text": "The process by which plants use light is called"
+  },
+  {
+    "suite": "factual",
+    "text": "The primary language spoken in Brazil is"
+  },
+  {
+    "suite": "factual",
+    "text": "The instrument used to measure temperature is a"
+  },
+  {
+    "suite": "math",
+    "text": "If x = 7, then 3 * x + 2 ="
+  },
+  {
+    "suite": "math",
+    "text": "12 + 19 ="
+  },
+  {
+    "suite": "math",
+    "text": "81 divided by 9 equals"
+  },
+  {
+    "suite": "math",
+    "text": "The square root of 144 is"
+  },
+  {
+    "suite": "math",
+    "text": "If a rectangle has sides 4 and 6, its area is"
+  },
+  {
+    "suite": "math",
+    "text": "2 to the power of 8 is"
+  },
+  {
+    "suite": "math",
+    "text": "The next number in the sequence 2, 4, 8, 16 is"
+  },
+  {
+    "suite": "math",
+    "text": "If y - 5 = 9, then y ="
+  },
+  {
+    "suite": "math",
+    "text": "One half of 50 is"
+  },
+  {
+    "suite": "math",
+    "text": "The sum of the angles of a triangle is"
+  },
+  {
+    "suite": "code",
+    "text": "def add(a, b):\n    return"
+  },
+  {
+    "suite": "code",
+    "text": "def square(x):\n    return"
+  },
+  {
+    "suite": "code",
+    "text": "for i in range(5):\n    print("
+  },
+  {
+    "suite": "code",
+    "text": "items = [1, 2, 3]\nlength = len("
+  },
+  {
+    "suite": "code",
+    "text": "if value is None:\n    value ="
+  },
+  {
+    "suite": "code",
+    "text": "const add = (a, b) =>"
+  },
+  {
+    "suite": "code",
+    "text": "function square(x) { return"
+  },
+  {
+    "suite": "code",
+    "text": "SELECT name FROM users WHERE id ="
+  },
+  {
+    "suite": "code",
+    "text": "JSON: {\"country\": \"France\", \"capital\":"
+  },
+  {
+    "suite": "code",
+    "text": "try:\n    result = 10 / 2\nexcept Exception as e:\n    print("
+  },
+  {
+    "suite": "russian",
+    "text": "Столица Франции — это"
+  },
+  {
+    "suite": "russian",
+    "text": "Вода замерзает при температуре"
+  },
+  {
+    "suite": "russian",
+    "text": "Противоположность слову горячий —"
+  },
+  {
+    "suite": "russian",
+    "text": "Два плюс два равно"
+  },
+  {
+    "suite": "ukrainian",
+    "text": "Столиця Франції — це"
+  },
+  {
+    "suite": "ukrainian",
+    "text": "Вода замерзає за температури"
+  },
+  {
+    "suite": "ukrainian",
+    "text": "Протилежне до слова гарячий —"
+  },
+  {
+    "suite": "ukrainian",
+    "text": "Два плюс два дорівнює"
+  },
+  {
+    "suite": "german",
+    "text": "Die Hauptstadt von Frankreich ist"
+  },
+  {
+    "suite": "spanish",
+    "text": "La capital de Francia es"
+  },
+  {
+    "suite": "continuation",
+    "text": "Once upon a time, in a small village,"
+  },
+  {
+    "suite": "continuation",
+    "text": "The scientist examined the data and concluded that"
+  },
+  {
+    "suite": "continuation",
+    "text": "To solve the problem step by step, first"
+  },
+  {
+    "suite": "continuation",
+    "text": "The main advantage of renewable energy is"
+  },
+  {
+    "suite": "continuation",
+    "text": "Machine learning models improve when"
+  },
+  {
+    "suite": "continuation",
+    "text": "A careful explanation should include"
+  },
+  {
+    "suite": "continuation",
+    "text": "The customer opened the package and found"
+  },
+  {
+    "suite": "continuation",
+    "text": "After the rain stopped, the sky became"
+  },
+  {
+    "suite": "continuation",
+    "text": "The book begins with a description of"
+  },
+  {
+    "suite": "continuation",
+    "text": "In a democratic system, citizens usually"
+  }
+]

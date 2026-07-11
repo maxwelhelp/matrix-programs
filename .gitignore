@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+outputs/
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+.DS_Store

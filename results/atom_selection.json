@@ -1,0 +1,270 @@
+{
+  "selection_prompts": [
+    {
+      "suite": "factual",
+      "text": "The opposite of hot is"
+    },
+    {
+      "suite": "continuation",
+      "text": "The main advantage of renewable energy is"
+    },
+    {
+      "suite": "code",
+      "text": "JSON: {\"country\": \"France\", \"capital\":"
+    },
+    {
+      "suite": "russian",
+      "text": "Противоположность слову горячий —"
+    },
+    {
+      "suite": "capital",
+      "text": "The capital of Australia is"
+    },
+    {
+      "suite": "math",
+      "text": "The sum of the angles of a triangle is"
+    },
+    {
+      "suite": "factual",
+      "text": "The primary language spoken in Brazil is"
+    },
+    {
+      "suite": "russian",
+      "text": "Два плюс два равно"
+    },
+    {
+      "suite": "capital",
+      "text": "The capital of Japan is"
+    },
+    {
+      "suite": "code",
+      "text": "def square(x):\n    return"
+    },
+    {
+      "suite": "factual",
+      "text": "Water boils at sea level at"
+    },
+    {
+      "suite": "math",
+      "text": "81 divided by 9 equals"
+    },
+    {
+      "suite": "russian",
+      "text": "Столица Франции — это"
+    },
+    {
+      "suite": "code",
+      "text": "if value is None:\n    value ="
+    },
+    {
+      "suite": "capital",
+      "text": "The capital of Spain is"
+    },
+    {
+      "suite": "ukrainian",
+      "text": "Столиця Франції — це"
+    },
+    {
+      "suite": "factual",
+      "text": "The instrument used to measure temperature is a"
+    },
+    {
+      "suite": "math",
+      "text": "The square root of 144 is"
+    },
+    {
+      "suite": "code",
+      "text": "SELECT name FROM users WHERE id ="
+    },
+    {
+      "suite": "math",
+      "text": "12 + 19 ="
+    },
+    {
+      "suite": "continuation",
+      "text": "Machine learning models improve when"
+    },
+    {
+      "suite": "factual",
+      "text": "Water freezes at a temperature of"
+    },
+    {
+      "suite": "factual",
+      "text": "The color produced by mixing blue and yellow is"
+    },
+    {
+      "suite": "code",
+      "text": "function square(x) { return"
+    }
+  ],
+  "selected": [
+    {
+      "layer": 0,
+      "atom": 1375,
+      "unrelated_atom": 4761,
+      "selection_mean_abs_target_contribution": 0.011692123487591743,
+      "selection_mean_output_norm": 0.747931957244873
+    },
+    {
+      "layer": 1,
+      "atom": 1942,
+      "unrelated_atom": 3052,
+      "selection_mean_abs_target_contribution": 0.0043324814178049564,
+      "selection_mean_output_norm": 0.2774841785430908
+    },
+    {
+      "layer": 2,
+      "atom": 1218,
+      "unrelated_atom": 1280,
+      "selection_mean_abs_target_contribution": 0.0052015590481460094,
+      "selection_mean_output_norm": 0.23553243279457092
+    },
+    {
+      "layer": 3,
+      "atom": 3573,
+      "unrelated_atom": 658,
+      "selection_mean_abs_target_contribution": 0.0038583695422858,
+      "selection_mean_output_norm": 0.2143695056438446
+    },
+    {
+      "layer": 4,
+      "atom": 685,
+      "unrelated_atom": 4779,
+      "selection_mean_abs_target_contribution": 0.00543181411921978,
+      "selection_mean_output_norm": 0.38959404826164246
+    },
+    {
+      "layer": 5,
+      "atom": 2706,
+      "unrelated_atom": 1224,
+      "selection_mean_abs_target_contribution": 0.01759868673980236,
+      "selection_mean_output_norm": 1.2425397634506226
+    },
+    {
+      "layer": 6,
+      "atom": 4717,
+      "unrelated_atom": 1927,
+      "selection_mean_abs_target_contribution": 0.006868583615869284,
+      "selection_mean_output_norm": 0.3537355363368988
+    },
+    {
+      "layer": 7,
+      "atom": 2719,
+      "unrelated_atom": 4780,
+      "selection_mean_abs_target_contribution": 0.0071664429269731045,
+      "selection_mean_output_norm": 0.14213907718658447
+    },
+    {
+      "layer": 8,
+      "atom": 3678,
+      "unrelated_atom": 7,
+      "selection_mean_abs_target_contribution": 0.004043767228722572,
+      "selection_mean_output_norm": 0.17406629025936127
+    },
+    {
+      "layer": 9,
+      "atom": 740,
+      "unrelated_atom": 2988,
+      "selection_mean_abs_target_contribution": 0.004672625567764044,
+      "selection_mean_output_norm": 0.20205572247505188
+    },
+    {
+      "layer": 10,
+      "atom": 1847,
+      "unrelated_atom": 2832,
+      "selection_mean_abs_target_contribution": 0.0077206711284816265,
+      "selection_mean_output_norm": 0.44124847650527954
+    },
+    {
+      "layer": 11,
+      "atom": 2542,
+      "unrelated_atom": 4052,
+      "selection_mean_abs_target_contribution": 0.012838684022426605,
+      "selection_mean_output_norm": 0.522090494632721
+    },
+    {
+      "layer": 12,
+      "atom": 1311,
+      "unrelated_atom": 4835,
+      "selection_mean_abs_target_contribution": 0.008501781150698662,
+      "selection_mean_output_norm": 0.8013460636138916
+    },
+    {
+      "layer": 13,
+      "atom": 2219,
+      "unrelated_atom": 3162,
+      "selection_mean_abs_target_contribution": 0.015419300645589828,
+      "selection_mean_output_norm": 0.9417681694030762
+    },
+    {
+      "layer": 14,
+      "atom": 1896,
+      "unrelated_atom": 3768,
+      "selection_mean_abs_target_contribution": 0.012840370647609234,
+      "selection_mean_output_norm": 0.4895400404930115
+    },
+    {
+      "layer": 15,
+      "atom": 77,
+      "unrelated_atom": 3111,
+      "selection_mean_abs_target_contribution": 0.14371420443058014,
+      "selection_mean_output_norm": 2.345235586166382
+    },
+    {
+      "layer": 16,
+      "atom": 1540,
+      "unrelated_atom": 4113,
+      "selection_mean_abs_target_contribution": 0.03088258020579815,
+      "selection_mean_output_norm": 1.0685217380523682
+    },
+    {
+      "layer": 17,
+      "atom": 4040,
+      "unrelated_atom": 779,
+      "selection_mean_abs_target_contribution": 0.024222133681178093,
+      "selection_mean_output_norm": 0.7897884249687195
+    },
+    {
+      "layer": 18,
+      "atom": 594,
+      "unrelated_atom": 1372,
+      "selection_mean_abs_target_contribution": 0.016687296330928802,
+      "selection_mean_output_norm": 0.6369186639785767
+    },
+    {
+      "layer": 19,
+      "atom": 1239,
+      "unrelated_atom": 1714,
+      "selection_mean_abs_target_contribution": 0.06436502933502197,
+      "selection_mean_output_norm": 0.606152355670929
+    },
+    {
+      "layer": 20,
+      "atom": 1043,
+      "unrelated_atom": 3722,
+      "selection_mean_abs_target_contribution": 0.09815111756324768,
+      "selection_mean_output_norm": 2.1369872093200684
+    },
+    {
+      "layer": 21,
+      "atom": 2930,
+      "unrelated_atom": 426,
+      "selection_mean_abs_target_contribution": 0.1179964542388916,
+      "selection_mean_output_norm": 3.647172689437866
+    },
+    {
+      "layer": 22,
+      "atom": 1222,
+      "unrelated_atom": 82,
+      "selection_mean_abs_target_contribution": 0.1440873146057129,
+      "selection_mean_output_norm": 4.392683506011963
+    },
+    {
+      "layer": 23,
+      "atom": 3036,
+      "unrelated_atom": 2670,
+      "selection_mean_abs_target_contribution": 0.27886828780174255,
+      "selection_mean_output_norm": 1.15338134765625
+    }
+  ]
+}

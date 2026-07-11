@@ -1,0 +1,11 @@
+{
+  "results_dir": "/mnt/data/final_release_v08/matrix-programs/results",
+  "figure_3_metric": "valid_tensor_rel_percent",
+  "figure_3_alignment": "target_index - (source_layer + 1)",
+  "figures": [
+    "fig1_method_overview.pdf/png",
+    "fig2_head_heatmaps.pdf/png",
+    "fig3_propagation_profiles.pdf/png",
+    "fig4_global_replacement_by_suite.pdf/png"
+  ]
+}

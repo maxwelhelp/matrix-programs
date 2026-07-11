@@ -1,0 +1,38 @@
+{
+  "figure_3_metric": "valid_tensor_rel_percent: relative L2 perturbation over all valid residual tokens in the 64-prompt batch",
+  "relative_offset_definition": "target_index - (source_layer + 1)",
+  "qk_median_peak_delay_layers": 10.0,
+  "vo_median_peak_delay_layers": 9.0,
+  "examples": {
+    "head_L02H05_qk_off": {
+      "csv_peak_percent": 20.287418174662317,
+      "csv_peak_index": 22,
+      "atlas_peak_percent": 20.28741817466232,
+      "atlas_peak_index": 22,
+      "atlas_first_percent": 3.527587646020687,
+      "atlas_final_logit_percent": 2.104627899825573,
+      "atlas_internal_to_final_ratio": 9.63943230836372,
+      "atlas_delay_layers": 19
+    },
+    "head_L17H02_qk_off": {
+      "csv_peak_percent": 5.586605429869056,
+      "csv_peak_index": 23,
+      "atlas_peak_percent": 5.586605429869056,
+      "atlas_peak_index": 23,
+      "atlas_first_percent": 0.2184995738596497,
+      "atlas_final_logit_percent": 2.134402096271515,
+      "atlas_internal_to_final_ratio": 2.6174100183035005,
+      "atlas_delay_layers": 5
+    },
+    "head_L16H10_vo_off": {
+      "csv_peak_percent": 5.782679905787023,
+      "csv_peak_index": 23,
+      "atlas_peak_percent": 5.782679905787023,
+      "atlas_peak_index": 23,
+      "atlas_first_percent": 0.3776880278942349,
+      "atlas_final_logit_percent": 2.1355949342250824,
+      "atlas_internal_to_final_ratio": 2.7077606399573684,
+      "atlas_delay_layers": 6
+    }
+  }
+}
