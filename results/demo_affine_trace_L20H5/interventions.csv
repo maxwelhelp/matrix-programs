@@ -1,0 +1,10 @@
+name,description,target_logit,target_logit_delta,logit_rel_percent,kl_base_to_intervention,top1_id,top1_token,top1_preserved
+baseline,Original unmodified model,17.234375,0.0,0.0,1.8693378789347292e-10,12095, Paris,True
+attention_exact_program,Replace selected native head with explicit QK/VO program,17.234375,0.0,0.0934283307287842,7.287279913725797e-06,12095, Paris,True
+attention_qk_uniform,Change only QK routing to uniform causal routing; keep VO payload,17.25,0.015625,3.29204760491848,0.0013581453822553158,12095, Paris,True
+attention_qk_amplified,Scale only QK routing scores by 1.5; keep VO payload,17.234375,0.0,0.7017109543085098,8.798656926956028e-05,12095, Paris,True
+attention_vo_zero,Zero only the selected head's VO payload/output,17.1875,-0.046875,4.81911227107048,0.0032443469390273094,12095, Paris,True
+mlp_exact_program,Replace selected native MLP with explicit gate/read/write program,17.234375,0.0,0.10139151709154248,4.637262463802472e-06,12095, Paris,True
+mlp_atom_zero_4520,Remove native MLP atom 4520 only at token position 4,16.359375,-0.875,16.852037608623505,0.15875321626663208,12095, Paris,True
+mlp_atom_zero_3433,Remove native MLP atom 3433 only at token position 4,17.09375,-0.140625,5.859043821692467,0.008079035207629204,12095, Paris,True
+mlp_atom_zero_93,Remove native MLP atom 93 only at token position 4,17.375,0.140625,9.545588493347168,0.022205695509910583,12095, Paris,True

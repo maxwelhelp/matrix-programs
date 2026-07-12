@@ -1,0 +1,145 @@
+EXECUTABLE MATRIX PROGRAM — READABLE TRACE
+Prompt: The capital of France is
+Tokens: [0]='The' [1]=' capital' [2]=' of' [3]=' France' [4]=' is'
+Baseline next token: ' Paris'
+
+ATTENTION L20H5 destination=' is'
+score(i,j) = constant_route + query_affine + key_affine + content_bilinear
+
+' is' <- ' France' (d=1)
+  constant_route   -1.83905911
+  query_affine     +0.69151342
+  key_affine       +0.83805466
+  content_bilinear +1.86525190
+  total_score      +1.55576110
+  dominant_term    content_bilinear
+  attention        0.51732099
+  VO_content_norm  4.97609806
+  VO_bias_norm     0.38966838
+  contribution     2.58406162
+
+' is' <- ' capital' (d=3)
+  constant_route   -1.81805229
+  query_affine     +0.56765497
+  key_affine       -0.02997285
+  content_bilinear +0.47011065
+  total_score      -0.81025982
+  dominant_term    constant_route
+  attention        0.04855235
+  VO_content_norm  5.72730446
+  VO_bias_norm     0.38966838
+  contribution     0.27777684
+
+' is' <- 'The' (d=4)
+  constant_route   -1.83113563
+  query_affine     +0.49756494
+  key_affine       +3.01938629
+  content_bilinear -0.42567337
+  total_score      +1.26014245
+  dominant_term    key_affine
+  attention        0.38492361
+  VO_content_norm  0.88295919
+  VO_bias_norm     0.38966838
+  contribution     0.23123778
+
+' is' <- ' is' (d=0)
+  constant_route   -1.89274859
+  query_affine     +0.73652512
+  key_affine       -0.18941253
+  content_bilinear +0.20618284
+  total_score      -1.13945317
+  dominant_term    constant_route
+  attention        0.03493360
+  VO_content_norm  3.78501105
+  VO_bias_norm     0.38966838
+  contribution     0.13332084
+
+' is' <- ' of' (d=2)
+  constant_route   -1.81504369
+  query_affine     +0.63127577
+  key_affine       -0.58105820
+  content_bilinear -0.26995671
+  total_score      -2.03478265
+  dominant_term    constant_route
+  attention        0.01426943
+  VO_content_norm  3.36763191
+  VO_bias_norm     0.38966838
+  contribution     0.04841714
+
+MLP L20 token=' is'
+contribution_j = SiLU(Wg_j x) * (Wu_j x) * Wd[:,j]
+
+atom 4520
+  gate              +5.30344963
+  read              -3.81749988
+  coefficient       -20.24591827
+  write_norm        0.56664950
+  atom_output_norm  11.47233963
+  causal_delta      -0.87500000
+
+atom 3433
+  gate              +2.04519653
+  read              -3.12371659
+  coefficient       -6.38861418
+  write_norm        0.62719715
+  atom_output_norm  4.00692034
+  causal_delta      -0.14062500
+
+atom 93
+  gate              +2.69022751
+  read              +3.69493437
+  coefficient       +9.94021416
+  write_norm        0.54661387
+  atom_output_norm  5.43345881
+  causal_delta      +0.14062500
+
+atom 4492
+  gate              +1.66570866
+  read              -1.76272404
+  coefficient       -2.93618464
+  write_norm        0.56225395
+  atom_output_norm  1.65088141
+  causal_delta      not run
+
+atom 1043
+  gate              +3.94567490
+  read              -1.83667779
+  coefficient       -7.24693346
+  write_norm        0.50720751
+  atom_output_norm  3.67569923
+  causal_delta      not run
+
+atom 3722
+  gate              +3.76877069
+  read              +1.13555276
+  coefficient       +4.27963781
+  write_norm        0.45174411
+  atom_output_norm  1.93330121
+  causal_delta      not run
+
+atom 3676
+  gate              +1.49308729
+  read              +1.96329808
+  coefficient       +2.93137550
+  write_norm        0.65623778
+  atom_output_norm  1.92367923
+  causal_delta      not run
+
+atom 1935
+  gate              +2.90036750
+  read              +1.27254486
+  coefficient       +3.69084787
+  write_norm        0.43244874
+  atom_output_norm  1.59610260
+  causal_delta      not run
+
+NATIVE-FORWARD REPLACEMENT / INTERVENTIONS
+baseline: full_logit_rel=0.00000000% delta_target=+0.00000000 top1=' Paris' preserved=True
+attention_exact_program: full_logit_rel=0.09342833% delta_target=+0.00000000 top1=' Paris' preserved=True
+attention_qk_uniform: full_logit_rel=3.29204760% delta_target=+0.01562500 top1=' Paris' preserved=True
+attention_qk_amplified: full_logit_rel=0.70171095% delta_target=+0.00000000 top1=' Paris' preserved=True
+attention_vo_zero: full_logit_rel=4.81911227% delta_target=-0.04687500 top1=' Paris' preserved=True
+mlp_exact_program: full_logit_rel=0.10139152% delta_target=+0.00000000 top1=' Paris' preserved=True
+mlp_atom_zero_4520: full_logit_rel=16.85203761% delta_target=-0.87500000 top1=' Paris' preserved=True
+mlp_atom_zero_3433: full_logit_rel=5.85904382% delta_target=-0.14062500 top1=' Paris' preserved=True
+mlp_atom_zero_93: full_logit_rel=9.54558849% delta_target=+0.14062500 top1=' Paris' preserved=True

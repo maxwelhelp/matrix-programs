@@ -1,0 +1,512 @@
+{
+  "configuration": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "prompt": "The capital of France is",
+    "attention_layer": 20,
+    "head": 5,
+    "mlp_layer": 20,
+    "token": -1,
+    "top_k": 8,
+    "causal_atoms": 3,
+    "qk_amplify": 1.5,
+    "max_length": 128,
+    "device": "cuda",
+    "dtype": "fp16",
+    "seed": 0,
+    "out_dir": "outputs/demo_affine_trace_L20H5"
+  },
+  "tokens": [
+    {
+      "index": 0,
+      "token_id": 785,
+      "token": "The"
+    },
+    {
+      "index": 1,
+      "token_id": 6722,
+      "token": " capital"
+    },
+    {
+      "index": 2,
+      "token_id": 315,
+      "token": " of"
+    },
+    {
+      "index": 3,
+      "token_id": 9625,
+      "token": " France"
+    },
+    {
+      "index": 4,
+      "token_id": 374,
+      "token": " is"
+    }
+  ],
+  "baseline": {
+    "target_id": 12095,
+    "target_token": " Paris"
+  },
+  "opaque_vs_explicit": [
+    {
+      "component": "Attention L20H5",
+      "ordinary_forward": "One mixed head/module output tensor",
+      "matrix_program": "Per-token QK scores, routing weights, VO payloads, token-to-token contributions",
+      "intervention_handle": "Change QK routing separately from VO payload"
+    },
+    {
+      "component": "MLP L20",
+      "ordinary_forward": "One nonlinear output tensor for the whole MLP",
+      "matrix_program": "Native atom gate, read, coefficient, write direction, and contribution",
+      "intervention_handle": "Remove or scale individual gate/read/write atoms"
+    }
+  ],
+  "precomputed_objects": [
+    {
+      "component": "attention",
+      "object": "M_qk[0]",
+      "meaning": "QK routing at relative distance d=0",
+      "shape": "897x897",
+      "frobenius_norm": 2.1648147106170654,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "attention",
+      "object": "M_qk[1]",
+      "meaning": "QK routing at relative distance d=1",
+      "shape": "897x897",
+      "frobenius_norm": 2.1150269508361816,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "attention",
+      "object": "M_qk[2]",
+      "meaning": "QK routing at relative distance d=2",
+      "shape": "897x897",
+      "frobenius_norm": 2.092735528945923,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "attention",
+      "object": "M_qk[3]",
+      "meaning": "QK routing at relative distance d=3",
+      "shape": "897x897",
+      "frobenius_norm": 2.095428705215454,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "attention",
+      "object": "M_qk[4]",
+      "meaning": "QK routing at relative distance d=4",
+      "shape": "897x897",
+      "frobenius_norm": 2.1067471504211426,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "attention",
+      "object": "C_vo",
+      "meaning": "VO payload/read-write map",
+      "shape": "896x897",
+      "frobenius_norm": 3.6189024448394775,
+      "rank_upper_bound": 64,
+      "input_dependent": false
+    },
+    {
+      "component": "mlp",
+      "object": "Wg",
+      "meaning": "Gate directions",
+      "shape": "4864x896",
+      "frobenius_norm": 43.40976333618164,
+      "rank_upper_bound": 896,
+      "input_dependent": false
+    },
+    {
+      "component": "mlp",
+      "object": "Wu",
+      "meaning": "Read directions",
+      "shape": "4864x896",
+      "frobenius_norm": 42.58998107910156,
+      "rank_upper_bound": 896,
+      "input_dependent": false
+    },
+    {
+      "component": "mlp",
+      "object": "Wd",
+      "meaning": "Write directions",
+      "shape": "896x4864",
+      "frobenius_norm": 40.708152770996094,
+      "rank_upper_bound": 896,
+      "input_dependent": false
+    },
+    {
+      "component": "mlp",
+      "object": "rank-1 atoms",
+      "meaning": "atom_j = Wd[:,j] outer Wu[j,:], gated at runtime",
+      "shape": "4864 atoms of 896x896",
+      "frobenius_norm": "",
+      "rank_upper_bound": 1,
+      "input_dependent": false
+    }
+  ],
+  "attention": {
+    "exact_score_formula": "score_ij = c_delta + q_affine_delta(x_i) + k_affine_delta(x_j) + x_i.T @ B_delta @ x_j",
+    "exact_payload_formula": "payload_j = C_vo_linear @ x_j + b_vo",
+    "metrics": {
+      "layer": 20,
+      "head": 5,
+      "kv_head": 0,
+      "hidden_size": 896,
+      "head_dim": 64,
+      "selected_destination_token": 4,
+      "native_vs_program_qk_score_rel": 0.001251577865332365,
+      "native_vs_program_attention_rel": 0.0005681165494024754,
+      "native_vs_program_payload_rel": 0.0002925188164226711,
+      "native_vs_program_head_output_rel": 0.0010610510362312198,
+      "qk_amplify": 1.5,
+      "captured_input_dtype": "torch.float16",
+      "projection_weight_dtype": "torch.float16",
+      "program_compute_dtype": "torch.float32",
+      "four_term_score_max_abs_error": 2.384185791015625e-07
+    },
+    "token_flow": [
+      {
+        "destination_index": 4,
+        "destination_token": " is",
+        "source_index": 3,
+        "source_token": " France",
+        "relative_distance": 1,
+        "constant_route": -1.8390591144561768,
+        "query_affine": 0.6915134191513062,
+        "key_affine": 0.8380546569824219,
+        "content_bilinear": 1.865251898765564,
+        "dominant_score_term": "content_bilinear",
+        "score_from_four_terms": 1.5557608604431152,
+        "native_qk_score": 1.555933952331543,
+        "program_qk_score": 1.5557610988616943,
+        "score_four_term_abs_error": 2.384185791015625e-07,
+        "native_attention": 0.5175730586051941,
+        "program_attention": 0.517320990562439,
+        "payload_content_norm": 4.97609806060791,
+        "payload_bias_norm": 0.38966837525367737,
+        "payload_norm": 4.995083808898926,
+        "content_contribution_norm": 2.57423996925354,
+        "bias_contribution_norm": 0.2015836238861084,
+        "contribution_norm": 2.584061622619629,
+        "direct_target_logit_proxy": 0.1846989393234253
+      },
+      {
+        "destination_index": 4,
+        "destination_token": " is",
+        "source_index": 1,
+        "source_token": " capital",
+        "relative_distance": 3,
+        "constant_route": -1.8180522918701172,
+        "query_affine": 0.5676549673080444,
+        "key_affine": -0.029972851276397705,
+        "content_bilinear": 0.4701106548309326,
+        "dominant_score_term": "constant_route",
+        "score_from_four_terms": -0.8102595806121826,
+        "native_qk_score": -0.8072817325592041,
+        "program_qk_score": -0.8102598190307617,
+        "score_four_term_abs_error": 2.384185791015625e-07,
+        "native_attention": 0.04871246591210365,
+        "program_attention": 0.04855235293507576,
+        "payload_content_norm": 5.727304458618164,
+        "payload_bias_norm": 0.38966837525367737,
+        "payload_norm": 5.721182346343994,
+        "content_contribution_norm": 0.27807411551475525,
+        "bias_contribution_norm": 0.018919317051768303,
+        "contribution_norm": 0.277776837348938,
+        "direct_target_logit_proxy": 0.01358116790652275
+      },
+      {
+        "destination_index": 4,
+        "destination_token": " is",
+        "source_index": 0,
+        "source_token": "The",
+        "relative_distance": 4,
+        "constant_route": -1.831135630607605,
+        "query_affine": 0.4975649416446686,
+        "key_affine": 3.0193862915039062,
+        "content_bilinear": -0.42567336559295654,
+        "dominant_score_term": "key_affine",
+        "score_from_four_terms": 1.260142207145691,
+        "native_qk_score": 1.2584102153778076,
+        "program_qk_score": 1.26014244556427,
+        "score_four_term_abs_error": 2.384185791015625e-07,
+        "native_attention": 0.38437822461128235,
+        "program_attention": 0.3849236071109772,
+        "payload_content_norm": 0.8829591870307922,
+        "payload_bias_norm": 0.38966837525367737,
+        "payload_norm": 0.6007367968559265,
+        "content_contribution_norm": 0.3398718237876892,
+        "bias_contribution_norm": 0.14999255537986755,
+        "contribution_norm": 0.23123778402805328,
+        "direct_target_logit_proxy": -0.00285781966522336
+      },
+      {
+        "destination_index": 4,
+        "destination_token": " is",
+        "source_index": 4,
+        "source_token": " is",
+        "relative_distance": 0,
+        "constant_route": -1.8927485942840576,
+        "query_affine": 0.7365251183509827,
+        "key_affine": -0.18941253423690796,
+        "content_bilinear": 0.2061828374862671,
+        "dominant_score_term": "constant_route",
+        "score_from_four_terms": -1.1394532918930054,
+        "native_qk_score": -1.136955738067627,
+        "program_qk_score": -1.1394531726837158,
+        "score_four_term_abs_error": 1.1920928955078125e-07,
+        "native_attention": 0.035031966865062714,
+        "program_attention": 0.034933604300022125,
+        "payload_content_norm": 3.785011053085327,
+        "payload_bias_norm": 0.38966837525367737,
+        "payload_norm": 3.816406488418579,
+        "content_contribution_norm": 0.13222408294677734,
+        "bias_contribution_norm": 0.013612520880997181,
+        "contribution_norm": 0.13332083821296692,
+        "direct_target_logit_proxy": 0.007479263469576836
+      },
+      {
+        "destination_index": 4,
+        "destination_token": " is",
+        "source_index": 2,
+        "source_token": " of",
+        "relative_distance": 2,
+        "constant_route": -1.8150436878204346,
+        "query_affine": 0.6312757730484009,
+        "key_affine": -0.5810582041740417,
+        "content_bilinear": -0.26995670795440674,
+        "dominant_score_term": "constant_route",
+        "score_from_four_terms": -2.034782886505127,
+        "native_qk_score": -2.0326573848724365,
+        "program_qk_score": -2.034782648086548,
+        "score_four_term_abs_error": 2.384185791015625e-07,
+        "native_attention": 0.014304287731647491,
+        "program_attention": 0.014269433915615082,
+        "payload_content_norm": 3.3676319122314453,
+        "payload_bias_norm": 0.38966837525367737,
+        "payload_norm": 3.3930671215057373,
+        "content_contribution_norm": 0.048054203391075134,
+        "bias_contribution_norm": 0.005560346879065037,
+        "contribution_norm": 0.048417143523693085,
+        "direct_target_logit_proxy": 0.001117738545872271
+      }
+    ]
+  },
+  "mlp": {
+    "metrics": {
+      "layer": 20,
+      "hidden_size": 896,
+      "intermediate_size": 4864,
+      "selected_token": 4,
+      "native_vs_program_mlp_output_rel": 0.0003989161632489413,
+      "native_vs_program_mlp_output_max_abs": 0.0032215118408203125
+    },
+    "atoms": [
+      {
+        "neuron": 4520,
+        "gate_pre": 5.329161167144775,
+        "gate_after_silu": 5.303449630737305,
+        "read": -3.817499876022339,
+        "coefficient_gate_x_read": -20.24591827392578,
+        "write_norm": 0.5666494965553284,
+        "atom_output_norm": 11.472339630126953,
+        "direct_target_logit_proxy": 0.5989999771118164,
+        "causal_target_logit_delta": -0.875,
+        "causal_top1_changed": false
+      },
+      {
+        "neuron": 3433,
+        "gate_pre": 2.2588577270507812,
+        "gate_after_silu": 2.045196533203125,
+        "read": -3.1237165927886963,
+        "coefficient_gate_x_read": -6.388614177703857,
+        "write_norm": 0.6271971464157104,
+        "atom_output_norm": 4.006920337677002,
+        "direct_target_logit_proxy": 0.14536328613758087,
+        "causal_target_logit_delta": -0.140625,
+        "causal_top1_changed": false
+      },
+      {
+        "neuron": 93,
+        "gate_pre": 2.846402645111084,
+        "gate_after_silu": 2.690227508544922,
+        "read": 3.694934368133545,
+        "coefficient_gate_x_read": 9.940214157104492,
+        "write_norm": 0.546613872051239,
+        "atom_output_norm": 5.4334588050842285,
+        "direct_target_logit_proxy": -0.11768067628145218,
+        "causal_target_logit_delta": 0.140625,
+        "causal_top1_changed": false
+      },
+      {
+        "neuron": 4492,
+        "gate_pre": 1.9118993282318115,
+        "gate_after_silu": 1.6657086610794067,
+        "read": -1.7627240419387817,
+        "coefficient_gate_x_read": -2.9361846446990967,
+        "write_norm": 0.5622539520263672,
+        "atom_output_norm": 1.6508814096450806,
+        "direct_target_logit_proxy": 0.08591873943805695,
+        "causal_target_logit_delta": null,
+        "causal_top1_changed": null
+      },
+      {
+        "neuron": 1043,
+        "gate_pre": 4.016742706298828,
+        "gate_after_silu": 3.9456748962402344,
+        "read": -1.8366777896881104,
+        "coefficient_gate_x_read": -7.246933460235596,
+        "write_norm": 0.5072075128555298,
+        "atom_output_norm": 3.675699234008789,
+        "direct_target_logit_proxy": 0.0629170686006546,
+        "causal_target_logit_delta": null,
+        "causal_top1_changed": null
+      },
+      {
+        "neuron": 3722,
+        "gate_pre": 3.849045753479004,
+        "gate_after_silu": 3.768770694732666,
+        "read": 1.1355527639389038,
+        "coefficient_gate_x_read": 4.279637813568115,
+        "write_norm": 0.45174410939216614,
+        "atom_output_norm": 1.9333012104034424,
+        "direct_target_logit_proxy": 0.04344291612505913,
+        "causal_target_logit_delta": null,
+        "causal_top1_changed": null
+      },
+      {
+        "neuron": 3676,
+        "gate_pre": 1.7520227432250977,
+        "gate_after_silu": 1.4930872917175293,
+        "read": 1.9632980823516846,
+        "coefficient_gate_x_read": 2.931375503540039,
+        "write_norm": 0.656237781047821,
+        "atom_output_norm": 1.923679232597351,
+        "direct_target_logit_proxy": 0.04085680842399597,
+        "causal_target_logit_delta": null,
+        "causal_top1_changed": null
+      },
+      {
+        "neuron": 1935,
+        "gate_pre": 3.039215087890625,
+        "gate_after_silu": 2.900367498397827,
+        "read": 1.2725448608398438,
+        "coefficient_gate_x_read": 3.690847873687744,
+        "write_norm": 0.43244874477386475,
+        "atom_output_norm": 1.5961025953292847,
+        "direct_target_logit_proxy": 0.0403333455324173,
+        "causal_target_logit_delta": null,
+        "causal_top1_changed": null
+      }
+    ]
+  },
+  "interventions": [
+    {
+      "name": "baseline",
+      "description": "Original unmodified model",
+      "target_logit": 17.234375,
+      "target_logit_delta": 0.0,
+      "logit_rel_percent": 0.0,
+      "kl_base_to_intervention": 1.8693378789347292e-10,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "attention_exact_program",
+      "description": "Replace selected native head with explicit QK/VO program",
+      "target_logit": 17.234375,
+      "target_logit_delta": 0.0,
+      "logit_rel_percent": 0.0934283307287842,
+      "kl_base_to_intervention": 7.287279913725797e-06,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "attention_qk_uniform",
+      "description": "Change only QK routing to uniform causal routing; keep VO payload",
+      "target_logit": 17.25,
+      "target_logit_delta": 0.015625,
+      "logit_rel_percent": 3.29204760491848,
+      "kl_base_to_intervention": 0.0013581453822553158,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "attention_qk_amplified",
+      "description": "Scale only QK routing scores by 1.5; keep VO payload",
+      "target_logit": 17.234375,
+      "target_logit_delta": 0.0,
+      "logit_rel_percent": 0.7017109543085098,
+      "kl_base_to_intervention": 8.798656926956028e-05,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "attention_vo_zero",
+      "description": "Zero only the selected head's VO payload/output",
+      "target_logit": 17.1875,
+      "target_logit_delta": -0.046875,
+      "logit_rel_percent": 4.81911227107048,
+      "kl_base_to_intervention": 0.0032443469390273094,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "mlp_exact_program",
+      "description": "Replace selected native MLP with explicit gate/read/write program",
+      "target_logit": 17.234375,
+      "target_logit_delta": 0.0,
+      "logit_rel_percent": 0.10139151709154248,
+      "kl_base_to_intervention": 4.637262463802472e-06,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "mlp_atom_zero_4520",
+      "description": "Remove native MLP atom 4520 only at token position 4",
+      "target_logit": 16.359375,
+      "target_logit_delta": -0.875,
+      "logit_rel_percent": 16.852037608623505,
+      "kl_base_to_intervention": 0.15875321626663208,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "mlp_atom_zero_3433",
+      "description": "Remove native MLP atom 3433 only at token position 4",
+      "target_logit": 17.09375,
+      "target_logit_delta": -0.140625,
+      "logit_rel_percent": 5.859043821692467,
+      "kl_base_to_intervention": 0.008079035207629204,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    },
+    {
+      "name": "mlp_atom_zero_93",
+      "description": "Remove native MLP atom 93 only at token position 4",
+      "target_logit": 17.375,
+      "target_logit_delta": 0.140625,
+      "logit_rel_percent": 9.545588493347168,
+      "kl_base_to_intervention": 0.022205695509910583,
+      "top1_id": 12095,
+      "top1_token": " Paris",
+      "top1_preserved": true
+    }
+  ]
+}

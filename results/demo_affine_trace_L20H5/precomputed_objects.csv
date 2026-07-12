@@ -1,0 +1,11 @@
+component,object,meaning,shape,frobenius_norm,rank_upper_bound,input_dependent
+attention,M_qk[0],QK routing at relative distance d=0,897x897,2.1648147106170654,64,False
+attention,M_qk[1],QK routing at relative distance d=1,897x897,2.1150269508361816,64,False
+attention,M_qk[2],QK routing at relative distance d=2,897x897,2.092735528945923,64,False
+attention,M_qk[3],QK routing at relative distance d=3,897x897,2.095428705215454,64,False
+attention,M_qk[4],QK routing at relative distance d=4,897x897,2.1067471504211426,64,False
+attention,C_vo,VO payload/read-write map,896x897,3.6189024448394775,64,False
+mlp,Wg,Gate directions,4864x896,43.40976333618164,896,False
+mlp,Wu,Read directions,4864x896,42.58998107910156,896,False
+mlp,Wd,Write directions,896x4864,40.708152770996094,896,False
+mlp,rank-1 atoms,"atom_j = Wd[:,j] outer Wu[j,:], gated at runtime",4864 atoms of 896x896,,1,False

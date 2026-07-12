@@ -1,0 +1,3 @@
+component,ordinary_forward,matrix_program,intervention_handle
+Attention L20H5,One mixed head/module output tensor,"Per-token QK scores, routing weights, VO payloads, token-to-token contributions",Change QK routing separately from VO payload
+MLP L20,One nonlinear output tensor for the whole MLP,"Native atom gate, read, coefficient, write direction, and contribution",Remove or scale individual gate/read/write atoms
